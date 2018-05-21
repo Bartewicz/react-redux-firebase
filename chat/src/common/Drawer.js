@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 // Material-ui 1.0
-import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import IconButton from '@material-ui/core/IconButton'

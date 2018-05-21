@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+
+import { HashRouter as Router } from 'react-router-dom'
+
 import Drawer from './common/Drawer'
 import AppBar from './common/AppBar'
-import logo from './logo.svg'
 import './App.css'
+import Nav from './common/Nav'
 
 class App extends Component {
   state = {
@@ -14,20 +17,23 @@ class App extends Component {
       isDrawerOpen: !this.state.isDrawerOpen
     })
   }
-  
+
   render() {
     return (
-      <div className="App">
+      <Router>
+        <div className="App">
 
-        <Drawer
-          isDrawerOpen={this.state.isDrawerOpen}
-          drawerHandler={this.drawerHandler}
-        />
-        <AppBar
-          drawerHandler={this.drawerHandler}
-        />
+          <Drawer
+            isDrawerOpen={this.state.isDrawerOpen}
+            drawerHandler={this.drawerHandler}
+          />
+          <AppBar
+            drawerHandler={this.drawerHandler}
+          />
+          <Nav />
 
-      </div>
+        </div>
+      </Router>
     )
   }
 }
