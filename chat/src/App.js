@@ -1,22 +1,32 @@
 import React, { Component } from 'react'
 import Drawer from './common/Drawer'
+import AppBar from './common/AppBar'
 import logo from './logo.svg'
 import './App.css'
 
 class App extends Component {
+  state = {
+    isDrawerOpen: true
+  }
+
+  drawerHandler = () => {
+    this.setState({
+      isDrawerOpen: !this.state.isDrawerOpen
+    })
+  }
+  
   render() {
     return (
       <div className="App">
 
-        <Drawer />
+        <Drawer
+          isDrawerOpen={this.state.isDrawerOpen}
+          drawerHandler={this.drawerHandler}
+        />
+        <AppBar
+          drawerHandler={this.drawerHandler}
+        />
 
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     )
   }
