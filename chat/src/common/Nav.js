@@ -6,6 +6,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import MessagesList from '../MessagesList'
+
 const TempView = () => (
   <div>
     {Math.random()}
@@ -15,7 +17,7 @@ const TempView = () => (
 const Nav = (props) => {
   return (
       <div>
-        <Route path="/messages" component={TempView} />
+        <Route path="/messages" component={MessagesList} />
         <Route path="/users" component={TempView} />
         <Route path="/login" component={TempView} />
       </div>
